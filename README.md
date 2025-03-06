@@ -20,21 +20,18 @@ The problems are categorized by difficulty and topic (if applicable). The folder
 
 ├── Easy/
 │   ├── problem-name.js
-│   ├── problem-name.py
 │
 ├── Medium/
 │   ├── problem-name.js
-│   ├── problem-name.py
 │
 ├── Hard/
-│   ├── problem-name.js
-│   ├── problem-name.py
+│   ├── problem-name.js 
 │
 └── README.md
 
 🔧 Technologies Used
 
-Programming Languages: JavaScript, Python (and others as needed)
+Programming Languages: JavaScript, (and others as needed)
 
 Algorithms & Data Structures: Arrays, Linked Lists, Trees, Graphs, Dynamic Programming, etc.
 
@@ -42,7 +39,7 @@ Algorithms & Data Structures: Arrays, Linked Lists, Trees, Graphs, Dynamic Progr
 
 Clone the repository:
 
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/mahmoud-farag/leetCode.git
 
 Navigate to the repository:
 
