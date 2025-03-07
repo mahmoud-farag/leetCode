@@ -41,8 +41,8 @@ function romanToInt(romanNumber) {
       const current = romanToInteger[strArr[i]];
       const next = romanToInteger[strArr[i + 1]] || 0;
 
-      if (next < current) theInteger += (secondNumber - firstNumber);
-      else theInteger += firstNumber;
+      if (current < next) theInteger += Math.abs(next - current);
+      else theInteger += current;
   }
 
 
