@@ -29,40 +29,48 @@
 //The Solution
 
 
+
 function romanToInt(romanNumber) {
     
-  const romanToInteger = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 };
-  let theInteger = 0;
-
   if (!isValidRomanNumber(romanNumber)) return 0;
-  
-  for (let i= 0; i < strArr.length; i++) {
-      
-      const current = romanToInteger[strArr[i]];
-      const next = romanToInteger[strArr[i + 1]] || 0;
 
-      if (current < next) theInteger += Math.abs(next - current);
-      else theInteger += current;
+  const romanToIntegerMap = {
+      'I': 1, 'V': 5, 'X': 10, 'L': 50,
+      'C': 100, 'D': 500, 'M': 1000
+  };
+
+  let finalNumber = 0;
+
+  for (let i = 0; i < romanNumber.length; i++) {
+      let current = romanToIntegerMap[romanNumber[i]];
+      let next = romanToIntegerMap[romanNumber[i + 1]] || 0; // `undefined` behaves as 0
+
+      if (current < next) {
+          finalNumber += (next - current);
+          i++; // Skip the next character since it's already considered
+      } else {
+          finalNumber += current;
+      }
   }
 
-
-  return theInteger;
-};
+  return finalNumber;
+}
 
 
 function isValidRomanNumber(romanNumber) {
 
-  if (typeof romanNumber !== 'string') return false;
+if (typeof romanNumber !== 'string') return false;
 
-  const regex = /^[IVXLCMD]+$/;
+const regex = /^[IVXLCMD]+$/;
 
-  return regex.test(romanNumber);
+return regex.test(romanNumber);
 
 }
 
 
 const result = romanToInt('MCMXCIV');
 console.log(result)
+
 
 
 
